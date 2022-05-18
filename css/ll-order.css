@@ -391,6 +391,7 @@ li {
   cursor: pointer;
   -webkit-box-shadow: inset 0 0 1px rgba(15, 84, 78, 0.4);
           box-shadow: inset 0 0 1px rgba(15, 84, 78, 0.4);
+  overflow: hidden;
 }
 
 .page-order label.in-single {
@@ -418,6 +419,31 @@ li {
 .page-order label .thumb img {
   display: block;
   width: 100%;
+}
+
+.page-order label .thumb[data-kind]::after {
+  content: '웰빙';
+  z-index: 1;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 6px 10px;
+  background: #0F544E;
+  color: #FFF;
+  font-size: 13px;
+  border-radius: 0 0 0 8px;
+}
+
+.page-order label .thumb[data-kind=fresh]::after {
+  content: '프레시박스';
+}
+
+.page-order label .thumb[data-kind=meal]::after {
+  content: '든든한';
+}
+
+.page-order label .thumb[data-kind=yogurt]::after {
+  content: '요거트';
 }
 
 .page-order label input {
