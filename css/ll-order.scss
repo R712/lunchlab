@@ -7,8 +7,8 @@ $c-brand: #0F544E;
 $c-dark: #001C34;
 $c-gray: rgba($c-dark, .4);
 $c-white: #FFF;
-$c-bg: rgba($c-brand, .02);
-$c-bd: rgba($c-brand, .04);
+$c-bg: rgba($c-brand, .04);
+$c-bd: rgba($c-brand, .08);
 $c-alpha0: rgba($c-brand, .5);
 $c-alpha1: rgba($c-brand, .4);
 $radius: 8px;
@@ -530,7 +530,7 @@ li {
     .info-chip {
         display: flex;
         flex-direction: column;
-        margin-top: 20px;
+        margin-top: 40px;
         padding: 24px;
         background: $c-bg;
         border-radius: $radius;
@@ -565,13 +565,15 @@ li {
             color: $c-alpha1;
             font-weight: 400;
             font-size: $f-md;
+            text-overflow: ellipsis;
+            word-break: keep-all;
         }
         .info-item {
             position: relative;
             display: flex;
             flex-direction: column;
             padding-left: 72px;
-            height: 56px;
+            min-height: 56px;
             &[data-kind]::before {
                 content: '';
                 position: absolute;

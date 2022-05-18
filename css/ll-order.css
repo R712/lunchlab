@@ -136,7 +136,7 @@ li {
   min-width: 880px;
   margin-top: 64px;
   padding-top: 40px;
-  border-top: 1px solid rgba(15, 84, 78, 0.04);
+  border-top: 1px solid rgba(15, 84, 78, 0.08);
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
   color: rgba(15, 84, 78, 0.5);
@@ -245,7 +245,7 @@ li {
 }
 
 .app .nav nav a + a {
-  border-top: 1px solid rgba(15, 84, 78, 0.04);
+  border-top: 1px solid rgba(15, 84, 78, 0.08);
 }
 
 .app .nav nav a:hover {
@@ -262,7 +262,7 @@ li {
           justify-content: center;
   margin-top: 24px;
   border-top: 0;
-  background: rgba(15, 84, 78, 0.02);
+  background: rgba(15, 84, 78, 0.04);
   font-size: 13px;
   line-height: 40px;
   text-align: center;
@@ -385,7 +385,7 @@ li {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background: rgba(15, 84, 78, 0.02);
+  background: rgba(15, 84, 78, 0.04);
   border-radius: 8px;
   overflow: hidden;
   cursor: pointer;
@@ -498,7 +498,7 @@ li {
           justify-content: center;
   margin-top: 24px;
   padding: 40px 0;
-  border-top: 1px solid rgba(15, 84, 78, 0.04);
+  border-top: 1px solid rgba(15, 84, 78, 0.08);
 }
 
 .page-order footer p {
@@ -579,7 +579,7 @@ li {
       -ms-flex-align: center;
           align-items: center;
   width: 150px;
-  background: rgba(15, 84, 78, 0.02);
+  background: rgba(15, 84, 78, 0.04);
   border-radius: 8px;
   overflow: hidden;
   -webkit-transition: all .2s ease-in-out;
@@ -707,7 +707,7 @@ li {
   margin-top: 12px;
   height: 40px;
   border: 0;
-  background: rgba(15, 84, 78, 0.02);
+  background: rgba(15, 84, 78, 0.04);
   color: rgba(15, 84, 78, 0.5);
   font-size: 16px;
   border-radius: 8px;
@@ -742,9 +742,9 @@ li {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-top: 20px;
+  margin-top: 40px;
   padding: 24px;
-  background: rgba(15, 84, 78, 0.02);
+  background: rgba(15, 84, 78, 0.04);
   border-radius: 8px;
 }
 
@@ -768,7 +768,7 @@ li {
           flex-direction: column;
   margin-top: 20px;
   padding: 24px 24px 16px;
-  border: 1px solid rgba(15, 84, 78, 0.04);
+  border: 1px solid rgba(15, 84, 78, 0.08);
   background: #FFF;
   border-radius: 8px;
 }
@@ -789,6 +789,8 @@ li {
   color: rgba(15, 84, 78, 0.4);
   font-weight: 400;
   font-size: 16px;
+  text-overflow: ellipsis;
+  word-break: keep-all;
 }
 
 .page-my .info-card .info-item {
@@ -801,7 +803,7 @@ li {
       -ms-flex-direction: column;
           flex-direction: column;
   padding-left: 72px;
-  height: 56px;
+  min-height: 56px;
 }
 
 .page-my .info-card .info-item[data-kind]::before {
@@ -821,7 +823,7 @@ li {
   margin-right: 4px;
   width: 56px;
   height: 56px;
-  background: rgba(15, 84, 78, 0.02);
+  background: rgba(15, 84, 78, 0.04);
   line-height: 1;
   border-radius: 8px;
 }
@@ -843,7 +845,7 @@ li {
           align-items: center;
   margin-top: 16px;
   padding-top: 12px;
-  border-top: 1px solid rgba(15, 84, 78, 0.02);
+  border-top: 1px solid rgba(15, 84, 78, 0.04);
 }
 
 .page-my .info-card footer a {
@@ -988,8 +990,8 @@ li {
     top: 0;
     padding-top: 80px !important;
     min-height: 100vh;
-    -webkit-box-shadow: -1px 0 0 rgba(15, 84, 78, 0.04);
-            box-shadow: -1px 0 0 rgba(15, 84, 78, 0.04);
+    -webkit-box-shadow: -1px 0 0 rgba(15, 84, 78, 0.08);
+            box-shadow: -1px 0 0 rgba(15, 84, 78, 0.08);
     -webkit-transition: all .4s ease-in-out;
     transition: all .4s ease-in-out;
   }
