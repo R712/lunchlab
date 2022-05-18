@@ -1,0 +1,772 @@
+@import url(normalize.css);
+@import url(font.css);
+@import url(animate.css);
+
+// 세팅
+$c-brand: #0F544E;
+$c-dark: #001C34;
+$c-gray: rgba($c-dark, .4);
+$c-white: #FFF;
+$c-bg: rgba($c-brand, .02);
+$c-bd: rgba($c-brand, .04);
+$c-alpha0: rgba($c-brand, .5);
+$c-alpha1: rgba($c-brand, .4);
+$radius: 8px;
+$f-xl: 24px;
+$f-lg: 20px;
+$f-md: 16px;
+$f-df: 14px;
+$f-sm: 13px;
+
+// 기본
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a,
+button {
+    text-decoration: none;
+    &:hover,
+    &:hover::before,
+    &:hover::after,
+    &:hover * {
+        transition: ease-in-out all .25s;
+    }
+}
+input[type=radio]{
+    background-color: $c-white;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 2px solid $c-alpha1;
+    width: 24px;
+    height: 24px;
+    border-radius: 100%;
+    cursor: pointer;
+}
+input[type=radio]:checked{
+    background-color: $c-brand;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 4px solid $c-white;
+    width: 24px;
+    height: 24px;
+    border-radius: 100%;
+    box-shadow: 0 0 2px $c-brand, 0 1px 16px $c-alpha0;
+}
+input:focus {
+    outline: none;
+    transition: ease-in-out all .15s;
+}
+html {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: $c-dark;
+    font-weight: 400;
+    font-family: 'Spoqa Han Sans Neo', sans-serif;
+    line-height: 1.58;
+    cursor: default;
+    overflow: auto;
+    overflow-x: hidden;
+    &::before {
+        display: none;
+        opacity: .1;
+        position: fixed;
+        left: 0;
+        top: 0;
+        content: '';
+        width: 100vw;
+        height: 200px;
+        background: url('../img/bg-art.svg') repeat-x center;
+        background-size: 40%;
+    }
+}
+li {
+    list-style: none;
+}
+.root {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 40px;
+    h1.brand {
+        margin: 0;
+        padding: 60px 40px 40px;
+        text-align: center;
+        img {
+            width: 150px;
+        }
+    }
+}
+
+.app-footer {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    max-width: 1080px;
+    min-width: 880px;
+    margin-top: 64px;
+    padding-top: 40px;
+    border-top: 1px solid $c-bd;
+    backdrop-filter: blur(10px);
+    color: $c-alpha0;
+    .brand {
+        opacity: .6;
+        margin-bottom: 12px;
+        padding: 0;
+        width: 120px;
+        filter: saturate(60%);
+    }
+    p {
+        margin-top: 8px;
+        max-width: 80%;
+        overflow: hidden;
+    }
+    span {
+        font-size: $f-sm;
+        line-height: 1.4;
+        word-break: keep-all;
+        white-space: nowrap;
+    }
+    h6 {
+        padding: 16px 0 40px;
+        font-size: $f-sm;
+    }
+    nav {
+        display: flex;
+        flex-direction: row;
+        font-size: $f-df;
+        strong {
+            margin-right: 12px;
+        }
+        a {
+            color: $c-alpha1;
+            font-weight: 600;
+            text-decoration: underline;
+            & + a {
+                margin-left: 12px;
+            }
+            &:hover {
+                color: $c-brand;
+            }
+        }
+    }
+}
+
+.app {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 80%;
+    max-width: 1080px;
+    min-width: 880px;
+    color: $c-brand;
+    .nav {
+        padding: 40px;
+        min-width: 280px;
+        max-width: 320px;
+        height: 100%;
+        background: rgba($c-white, .90);
+        backdrop-filter: blur(12px);
+        nav {
+            display: flex;
+            flex-direction: column;
+            font-size: $f-md;
+            a {
+                display: flex;
+                align-items: center;
+                color: $c-brand;
+                line-height: 56px;
+                & + a {
+                    border-top: 1px solid $c-bd;
+                }
+                &:hover {
+                    font-weight: 600;
+                    img {
+                        margin-right: 10px;
+                    }
+                }
+                &:last-child {
+                    justify-content: center;
+                    margin-top: 24px;
+                    border-top: 0;
+                    background: $c-bg;
+                    font-size: $f-sm;
+                    line-height: 40px;
+                    text-align: center;
+                    border-radius: $radius;
+                }
+                &.is-current {
+                    font-weight: 600;
+                    img {
+                        opacity: 1;
+                    }
+                }
+                img {
+                    opacity: .4;
+                    margin-right: 8px;
+                }
+            }
+        }
+        .link-call {
+            opacity: .4;
+            display: block;
+            margin-top: 40px;
+            background: none;
+            color: $c-brand;
+            font-weight: 600;
+            font-size: $f-df;
+            text-align: left;
+            ::before {
+                content: '고객센터';
+                display: block;
+                margin-bottom: 2px;
+                font-size: $f-sm;
+                font-weight: 500;
+            }
+        }
+    }
+    .page {
+        width: 100%;
+    }
+}
+
+.account {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 0 8px;
+    .avatar {
+        position: relative;
+        display: block;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        overflow: hidden;
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            box-shadow: inset 0 0 1px $c-alpha1;
+        }
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+    strong {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 16px 8px 16px;
+        font-size: $f-df;
+        &::after {
+            content: '님 안녕하세요';
+            font-weight: 300;
+        }
+    }
+}
+
+.headline {
+    margin: 40px 0 24px;
+    color: $c-brand;
+    font-size: $f-xl;
+    font-weight: 600;
+    p {
+        opacity: .8;
+        color: $c-alpha1;
+    }
+}
+
+.page-order {
+    label {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        background: $c-bg;
+        border-radius: $radius;
+        overflow: hidden;
+        cursor: pointer;
+        box-shadow: inset 0 0 1px $c-alpha1;
+        &.in-single {
+            padding: 14px 16px 14px 64px;
+        }
+        .thumb {
+            opacity: .6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 150px;
+            filter: saturate(25%);
+            overflow: hidden;
+            img {
+                display: block;
+                width: 100%;
+            }
+        }
+        input {
+            z-index: 1;
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            margin-top: -12px;
+            width: 24px;
+            height: 24px;
+            &:checked + .thumb {
+                opacity: 1;
+                filter: none;
+            }
+        }
+        p {
+            display: flex;
+            flex-direction: column;
+            padding: 14px 16px;
+        }
+        strong {
+            margin-bottom: 4px;
+            color: $c-brand;
+            font-size: $f-lg;
+            line-height: 1.4;
+            word-break: keep-all;
+        }
+        small {
+            color: $c-alpha0;
+            font-size: $f-sm;
+            word-break: keep-all;
+        }
+        &:hover {
+            transform: scale(1.04);
+            transition: all .2s ease-in-out;
+        }
+    }
+    .grid-2col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-top: 16px;
+        label {
+            input {
+                top: 20px;
+                margin-top: 0;
+            }
+        }
+    }
+    footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 24px;
+        padding: 40px 0;
+        border-top: 1px solid $c-bd;
+        p {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            &::before {
+                content: url('https://icongr.am/material/av-timer.svg?size=20&color=0F544E');
+                opacity: .6;
+                margin-right: 4px;
+                height: 24px;
+            }
+        }
+    }
+}
+
+.page-menu {
+    width: 100%;
+    .menuboard {
+        display: flex;
+        flex-direction: column;
+        margin-top: 24px;
+        .date {
+            width: 100%;
+            color: $c-alpha0;
+            font-weight: 600;
+            font-size: $f-md;
+        }
+        li {
+            &.is-closed {
+                opacity: .4;
+                filter: saturate(25%);
+                pointer-events: none;
+            }
+        }
+    }
+    .menutile {
+        display: flex;
+        flex-direction: row;
+        margin: 8px 0 24px;
+        font-size: $f-df;
+        font-weight: 400;
+        li {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 150px;
+            background: $c-bg;
+            border-radius: $radius;
+            overflow: hidden;
+            transition: all .2s ease-in-out;
+            cursor: pointer;
+            span {
+                padding: 12px;
+            }
+            & + li {
+                margin-left: 12px;
+            }
+            &:hover {
+                transform: scale(1.04);
+            }
+        }
+        .thumb {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 120px;
+            overflow: hidden;
+            img {
+                display: block;
+                width: 100%;
+            }
+        }
+        span {
+            width: 100%;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            word-break: keep-all;
+            overflow: hidden;
+        }
+    }
+}
+
+.page-history {
+    width: 100%;
+    .history {
+        display: flex;
+        flex-direction: column;
+        margin-top: 24px;
+        li {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            margin-top: 16px;
+            padding-left: 140px;
+            height: 100px;
+        }
+        span {
+            font-weight: 600;
+            font-size: $f-md;
+        }
+        .date {
+            width: 100%;
+            color: $c-alpha0;
+            font-weight: 500;
+            font-size: $f-df;
+        }
+        .thumb {
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 120px;
+            height: 100px;
+            border-radius: $radius;
+            box-shadow: 0 0 1px $c-alpha0;
+            overflow: hidden;
+            img {
+                width: 100%;
+            }
+        }
+        .btn-like {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 12px;
+            height: 40px;
+            border: 0;
+            background: $c-bg;
+            color: $c-alpha0;
+            font-size: $f-md;
+            border-radius: $radius;
+            cursor: pointer;
+            &::before {
+                content: url('https://icongr.am/material/heart-outline.svg?size=18&color=0F544E');
+                opacity: .4;
+                margin-right: 4px;
+            }
+            &:hover,
+            &.is-liked {
+                background: none;
+                box-shadow: 0 0 1px $c-alpha0;
+                &::before {
+                    content: url('https://icongr.am/material/heart.svg?size=18&color=0F544E');
+                }
+            }
+        }
+    }
+}
+
+.page-my {
+    width: 100%;
+    .info-chip {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+        padding: 24px;
+        background: $c-bg;
+        border-radius: $radius;
+        span {
+            font-size: $f-lg;
+        }
+        small {
+            color: $c-alpha1;
+            font-weight: 600;
+            font-size: $f-md;
+        }
+    }
+    .info-card {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+        padding: 24px 24px 16px;
+        border: 1px solid $c-bd;
+        background: $c-white;
+        border-radius: $radius;
+        h4 {
+            margin-bottom: 10px;
+            color: $c-alpha1;
+            font-size: $f-md; 
+        }
+        strong {
+            padding-top: 4px;
+            font-size: $f-md;
+        }
+        small {
+            margin-bottom: 4px;
+            color: $c-alpha1;
+            font-weight: 400;
+            font-size: $f-md;
+        }
+        .info-item {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            padding-left: 72px;
+            height: 56px;
+            &[data-kind]::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-right: 4px;
+                width: 56px;
+                height: 56px;
+                background: $c-bg;
+                line-height: 1;
+                border-radius: $radius;
+            }
+            &[data-kind=address]::before {
+                content: url('https://icongr.am/material/map-marker.svg?size=24&color=0F544E');
+            }
+            &[data-kind=payment]::before {
+                content: url('https://icongr.am/material/credit-card.svg?size=24&color=0F544E');
+            }
+        }
+        footer {
+            display: flex;
+            align-items: center;
+            margin-top: 16px;
+            padding-top: 12px;
+            border-top: 1px solid $c-bg;
+            a {
+                flex-grow: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 32px;
+                color: $c-alpha0;
+                font-size: $f-df;
+                text-decoration: underline;
+                &:hover {
+                    color: $c-brand;
+                }
+            }
+        }
+    }
+}
+
+.btn-order {
+    border: 0;
+    width: 100%;
+    height: 64px;
+    background: $c-brand;
+    color: $c-white;
+    font-weight: 600;
+    font-size: $f-md;
+    border-radius: $radius;
+    cursor: pointer;
+    &:hover {
+        box-shadow: 0 4px 24px $c-alpha1;
+    }
+    &:focus {
+        background: darken($c-brand, 2%);
+    }
+}
+
+//
+//  로더
+//
+.ll-loader {
+    z-index: 99;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba($c-white, .90);
+    backdrop-filter: blur(10px);
+    transition: all .4s ease-in-out;
+    cursor: wait;
+    .art {
+        width: 100px;
+        height: 100px;
+        background: url('/img/art.svg') repeat-x top center;
+        background-size: 100px;
+        animation: ll-art 3s infinite;
+        border-radius: 40px;
+    }
+    &.fade {
+        display: none;
+    }
+}
+@keyframes ll-art {
+    20% {
+        background-position: top center;
+    }
+    50% {
+        background-position: bottom center;
+    }
+    80% {
+        background-position: center center;
+    }
+}
+
+#nav-toggle,
+.btn-toggle {
+    display: none;
+}
+
+@media screen and (max-width: 1000px) {
+    body::before {
+        position: fixed;
+        opacity: .04;
+        top: inherit;
+        bottom: -50px;
+        background-size: 25%;
+    }
+    h1.brand,
+    .account,
+    .link-call {
+        display: none;
+    }
+    .root {
+        padding: 0;
+        min-height: 100vh;
+    }
+    .app,
+    .app-footer {
+        padding: 40px;
+        width: 80%;
+        max-width: 100vw;
+        min-width: 320px;
+    }
+    .nav {
+        z-index: 5;
+        position: fixed;
+        right: -100%;
+        top: 0;
+        padding-top: 80px !important;
+        min-height: 100vh;
+        box-shadow: -1px 0 0 $c-bd;
+        transition: all .4s ease-in-out;
+    }
+    #nav-toggle:checked ~ .nav {
+        right: 0;
+    }
+    #nav-toggle:checked ~ .btn-toggle {
+        &::before {
+            content: url('https://icongr.am/material/close.svg?size=24&color=0F544E');
+        }
+    }
+    .btn-toggle {
+        display: block;
+        z-index: 10;
+        position: fixed;
+        top: 0;
+        right: 0;
+        cursor: pointer;
+        &::before {
+            content: url('https://icongr.am/material/menu.svg?size=24&color=0F544E');
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 4px;
+            width: 60px;
+            height: 60px;
+            line-height: 1;
+        }
+        span {
+            display: none;
+        }
+    }
+    .headline {
+        margin-top: 60px;
+    }
+    .page-order {
+        footer {
+            z-index: 55;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            padding: 24px 40px;
+            width: 100%;
+            background: rgba($c-white, .8);
+            backdrop-filter: blur(12px);
+        }
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .app,
+    .app-footer {
+        padding: 28px;
+        width: 100%;
+        max-width: 100vw;
+        min-width: 320px;
+    }
+}
