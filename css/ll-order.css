@@ -1003,7 +1003,7 @@ li {
   }
   .btn-toggle {
     display: block;
-    z-index: 10;
+    z-index: 120;
     position: fixed;
     top: 0;
     right: 0;
