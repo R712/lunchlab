@@ -418,7 +418,8 @@ li {
 
 .page-order label .thumb img {
   display: block;
-  width: 100%;
+  min-width: 100%;
+  min-height: 150px;
 }
 
 .page-order label .thumb[data-kind]::after {

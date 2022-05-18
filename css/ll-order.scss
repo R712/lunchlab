@@ -316,7 +316,8 @@ li {
             transition: all .2s ease-in-out;
             img {
                 display: block;
-                width: 100%;
+                min-width: 100%;
+                min-height: 150px;
             }
             &[data-kind]::after {
                 content: '웰빙';
