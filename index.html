@@ -64,6 +64,7 @@
                   <p>
                     <strong>연어 베이컨 샐러드</strong>
                     <small>연어, 베이컨 ,토마토, 바질, 치커리, 리코타치즈 등</small>
+                    <a href="#" class="link-layer">자세히보기</a>
                   </p>
                 </label>
                 <label>
@@ -72,6 +73,7 @@
                   <p>
                     <strong>탄단지 묵은지 키토김밥</strong>
                     <small>묵은지, 계란, 게살, 이천쌀, 광천김, 천일염 등</small>
+                    <a href="#" class="link-layer">자세히보기</a>
                   </p>
                 </label>
                 <label>
@@ -80,6 +82,7 @@
                   <p>
                     <strong>연어 크림 스테이크</strong>
                     <small>연어, 우유, 생크림, 바질, 샐러리, 통후추 등</small>
+                    <a href="#" class="link-layer">자세히보기</a>
                   </p>
                 </label>
                 <label>
@@ -88,6 +91,7 @@
                   <p>
                     <strong>트리플베리 그릭요거트</strong>
                     <small>블루베리, 딸기, 크랜베리, 그릭요거트, 그래놀라 등</small>
+                    <a href="#" class="link-layer">자세히보기</a>
                   </p>
                 </label>
               </div>
@@ -123,11 +127,48 @@
       </footer>
     </div>
 
+    <div class="layer">
+      <div class="blind"></div>
+      <div class="layer-inner">
+        <button><img src="https://icongr.am/material/close.svg?size=24&color=FFFFFF"></button>
+        <div class="thumb" data-kind="fresh">
+          <img src="https://crcf.cookatmarket.com/product/images/2020/03/kida_1583141953_9007_720.jpg">
+        </div>
+        <div class="desc">
+          <p>
+            <strong>연어 베이컨 샐러드</strong>
+            <small>연어, 베이컨 ,토마토, 바질, 치커리, 리코타치즈 등</small>
+            <small>연어, 베이컨 ,토마토, 바질, 치커리, 리코타치즈 등</small>
+          </p>
+          <p>
+            <strong>원산지 정보</strong>
+            <small>연어, 옥수수, 파프리카: 국내산</small>
+            <small>밀가루: 프랑스산</small>
+          </p>
+          <p>
+            <strong>알러지 정보</strong>
+            <small>탄수화물 알러지 유의</small>
+            <small>치즈 알러지 유의</small>
+          </p>
+        </div>
+      </div>
+    </div>
+
     <script src="wow.min.js"></script>
     <script type="text/javascript">
 
       const Nav = document.querySelector('.nav');
       const Brand = document.querySelector('h1.brand');
+      let layerCall = document.querySelector('.link-layer');
+      let layerClose = document.querySelector('.layer button');
+      let layerDetail = document.querySelector('.layer');
+
+      layerCall.onclick = function() {
+        layerDetail.classList.toggle('fade');
+      };
+      layerClose.onclick = function() {
+        layerDetail.classList.toggle('fade');
+      };
 
       new WOW().init();
     
