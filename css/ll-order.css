@@ -114,6 +114,12 @@ li {
 }
 
 .root h1.brand {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin: 0;
   padding: 80px 0 0;
   width: 80%;
@@ -122,7 +128,14 @@ li {
 }
 
 .root h1.brand img {
+  margin-right: 16px;
   width: 150px;
+}
+
+.root h1.brand span {
+  color: rgba(15, 84, 78, 0.4);
+  font-weight: 500;
+  font-size: 16px;
 }
 
 .app-footer {
