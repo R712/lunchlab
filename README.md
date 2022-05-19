@@ -1,7 +1,7 @@
 런치랩
 =============
-[lunchlab.me][https://lunchlab.me] 브랜딩사이트 및 모바일 오더(고객 주문용)
-리디자인 + 프로토타입 코딩
+🌎 **런치랩** <https://lunchlab.me> 브랜딩사이트 및 모바일 오더(고객 주문용)
+리디자인 + 프로토타입 코딩 공유용
 
 🥦 **미리보기** <https://r712.github.io/lunchlab>
 
