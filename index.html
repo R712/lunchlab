@@ -58,7 +58,7 @@
               <div class="js-date"><!-- 날짜 --></div>
               <p>점심 메뉴를 선택해주세요.</p>
             </div>
-            <form action="/">
+            <form>
               <label class="in-single">
                 <input type="radio" name="order-choose">
                 <small>내일은 필요없어요</small>
@@ -104,7 +104,7 @@
               </div>
               <footer class="wow slideInUp" data-wow-delay=".4s">
                 <p class="msg"><strong>3시간 23분 후 7,900원</strong>이 결제됩니다.</p>
-                <button type="submit" class="btn btn-order">메뉴 변경하기</button>
+                <button type="button" class="btn btn-order">메뉴 변경하기</button>
               </footer>
             </form>
           </section>
@@ -170,6 +170,17 @@
       </div>
     </div>
 
+    <div class="toast">
+      <div class="toast-inner">
+        <div class="toast-msg">
+          <span class="lineup-label" data-lineup="fresh">프레시박스</span>
+          <span><strong>연어 베이컨 샐러드</strong></span>
+          <span>메뉴가 선택되었습니다.</span>
+        </div>
+        <button class="btn btn-deep">닫기</button>
+      </div>
+    </div>
+
     <script src="wow.min.js"></script>
     <script type="text/javascript">
 
@@ -179,6 +190,16 @@
     let layerClose = document.querySelector('.layer .btn-close');
     let layerDetail = document.querySelector('.layer');
     let orderItem = document.querySelectorAll('.page-order label input');
+    let btnOrder = document.querySelector('.btn-order');
+    let toastOrder = document.querySelector('.toast');
+    let toastClose = document.querySelector('.toast .btn');
+
+    btnOrder.onclick = () => {
+      toastOrder.classList.toggle('fade');
+    };
+    toastClose.onclick = () => {
+      toastOrder.classList.toggle('fade');
+    };
 
     layerCall.onclick = () => {
       layerDetail.classList.toggle('fade');

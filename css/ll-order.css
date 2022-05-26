@@ -1244,6 +1244,103 @@ li {
   top: 0;
 }
 
+.toast {
+  opacity: 0;
+  z-index: 200;
+  position: fixed;
+  left: 0;
+  bottom: -100vh;
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-backdrop-filter: blur(12px);
+          backdrop-filter: blur(12px);
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+  overflow: hidden;
+}
+
+.toast .toast-inner {
+  position: relative;
+  margin: auto;
+  width: 80vw;
+  max-width: 320px;
+  background: #0F544E;
+  color: #FFF;
+  border-radius: 12px;
+  -webkit-box-shadow: 0 0 24px rgba(15, 84, 78, 0.06);
+          box-shadow: 0 0 24px rgba(15, 84, 78, 0.06);
+  overflow: hidden;
+}
+
+.toast .toast-msg {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 24px;
+}
+
+.toast img {
+  opacity: .4;
+  margin: 20px 0 8px;
+}
+
+.toast .lineup-label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  opacity: .4;
+  margin-bottom: 4px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.toast .lineup-label::after {
+  content: url("https://icongr.am/material/leaf.svg?size=16&color=FFFFFF");
+  opacity: .4;
+  margin-left: 4px;
+}
+
+.toast span {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 16px;
+}
+
+.toast strong {
+  padding-right: 4px;
+  color: #FFF;
+  font-size: 20px;
+}
+
+.toast .btn {
+  width: 100%;
+  border-radius: 0 0 8px 8px;
+}
+
+.toast.fade {
+  opacity: 1;
+  top: 0;
+}
+
 .btn {
   outline: none;
   padding: 0 20px;
@@ -1281,6 +1378,18 @@ li {
   background: #0F544E;
   color: #FFF;
   font-weight: 600;
+}
+
+.btn.btn-invert {
+  border: 0;
+  background: #FFF;
+  color: #0F544E;
+}
+
+.btn.btn-deep {
+  border: 0;
+  background: #0c433e;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .btn-group {

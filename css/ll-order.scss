@@ -921,6 +921,73 @@ li {
     }
 }
 
+.toast {
+    opacity: 0;
+    z-index: 200;
+    position: fixed;
+    left: 0;
+    bottom: -100vh;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(12px);
+    transition: all .4s ease-in-out;
+    overflow: hidden;
+    .toast-inner {
+        position: relative;
+        margin: auto;
+        width: 80vw;
+        max-width: 320px;
+        background: $c-brand;
+        color: $c-white;
+        border-radius: 12px;
+        box-shadow: 0 0 24px $c-bd;
+        overflow: hidden;
+    }
+    .toast-msg {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 24px;
+    }
+    img {
+        opacity: .4;
+        margin: 20px 0 8px;
+    }
+    .lineup-label {
+        display: flex;
+        flex-direction: row;
+        opacity: .4;
+        margin-bottom: 4px;
+        font-weight: 600;
+        font-size: $f-df;
+        &::after {
+            content: url('https://icongr.am/material/leaf.svg?size=16&color=FFFFFF');
+            opacity: .4;
+            margin-left: 4px;
+        }
+    }
+    span {
+        color: rgba($c-white, .6);
+        font-size: $f-md;
+    }
+    strong {
+        padding-right: 4px;
+        color: $c-white;
+        font-size: $f-lg;
+    }
+    .btn {
+        width: 100%;
+        border-radius: 0 0 $radius $radius;
+    }
+    &.fade {
+        opacity: 1;
+        top: 0;
+    }
+}
+
 .btn {
     outline: none;
     padding: 0 20px;
@@ -952,6 +1019,16 @@ li {
         background: $c-brand;
         color: $c-white;
         font-weight: 600;
+    }
+    &.btn-invert {
+        border: 0;
+        background: $c-white;
+        color: $c-brand;
+    }
+    &.btn-deep {
+        border: 0;
+        background: darken($c-brand, 4%);
+        color: rgba($c-white, .6);
     }
 }
 
