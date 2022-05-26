@@ -365,6 +365,15 @@ li {
                 color: $c-white;
                 border-radius: 0 0 0 $radius;
             }
+            // &[data-kind=fresh]::after {
+            //     content: url('https://icongr.am/material/leaf.svg?size=24&color=FFFFFF');
+            // }
+            // &[data-kind=meal]::after {
+            //     content: url('https://icongr.am/material/silverware-fork-knife.svg?size=24&color=FFFFFF');
+            // }
+            // &[data-kind=yogurt]::after {
+            //     content: url('https://icongr.am/material/rice.svg?size=24&color=FFFFFF');
+            // }
             &[data-kind=fresh]::after {
                 content: url('https://icongr.am/material/leaf.svg?size=24&color=FFFFFF');
             }
@@ -444,6 +453,7 @@ li {
             align-items: center;
             justify-content: center;
             margin-bottom: 24px;
+            white-space: nowrap;
             &::before {
                 content: url('https://icongr.am/material/av-timer.svg?size=20&color=0F544E');
                 opacity: .6;
@@ -525,6 +535,7 @@ li {
 .menu-week {
     position: relative;
     max-width: 100vw;
+    margin: 0 -24px 0 0;
     box-shadow: inset 0 0 1px $c-alpha1;
     overflow-x: auto;
     .menu-week-inner {
@@ -551,6 +562,7 @@ li {
             padding: 6px 8px 5px;
             color: $c-alpha0;
             font-size: $f-sm;
+            box-shadow: inset 0 -1px $c-bd;
             strong {
                 padding-right: 4px;
                 &::after {
@@ -566,13 +578,22 @@ li {
         dd {
             display: flex;
             flex-direction: column;
+            height: 140px;
+            font-weight: 600;
+            font-size: $f-df;
             box-shadow: inset 0 -1px $c-bd;
-            font-size: $f-sm;
             span {
                 padding: 4px 8px;
-                white-space: nowrap;
+                word-break: keep-all;
+                font-weight: 500;
                 text-overflow: ellipsis;
                 overflow: hidden;
+            }
+            small {
+                padding: 0px 8px;
+                color: $c-alpha0;
+                font-weight: 400;
+                font-size: $f-sm;
             }
         }
         & + .menu-day {
@@ -580,7 +601,7 @@ li {
         }
     }
     .thumb {
-        display: flex;
+        display: none;
         align-items: center;
         justify-content: center;
         height: 120px;
