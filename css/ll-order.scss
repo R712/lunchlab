@@ -735,7 +735,7 @@ li {
             &:hover,
             &.is-liked {
                 background: none;
-                box-shadow: 0 0 1px $c-alpha0;
+                box-shadow: inset 0 0 1px $c-alpha0;
                 &::before {
                     content: url('https://icongr.am/material/heart.svg?size=18&color=0F544E');
                 }
