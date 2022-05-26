@@ -731,6 +731,7 @@ li {
 .menu-week .menu-day {
   position: relative;
   min-width: 120px;
+  min-height: 100%;
   overflow: hidden;
 }
 
@@ -801,6 +802,29 @@ li {
   font-size: 13px;
 }
 
+.menu-week .menu-day dd:only-of-type {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+  background: rgba(15, 84, 78, 0.03);
+  color: rgba(15, 84, 78, 0.4);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.menu-week .menu-day dd:only-of-type em {
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+}
+
 .menu-week .menu-day + .menu-day {
   -webkit-box-shadow: -1px 0 rgba(15, 84, 78, 0.06);
           box-shadow: -1px 0 rgba(15, 84, 78, 0.06);
@@ -848,17 +872,56 @@ li {
       -ms-flex-direction: column;
           flex-direction: column;
   margin-top: 16px;
-  padding-left: 140px;
+  padding-right: 140px;
   height: 100px;
 }
 
+.page-history .history li.data-skip {
+  position: relative;
+  height: 52px;
+}
+
+.page-history .history li.data-skip::before {
+  content: url("https://icongr.am/material/coffee.svg?size=24&color=0F544E");
+  position: absolute;
+  right: 0;
+  top: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 4px;
+  width: 120px;
+  height: 52px;
+  border: 1px dashed rgba(15, 84, 78, 0.4);
+  background: rgba(15, 84, 78, 0.03);
+  opacity: .25;
+  border-radius: 8px;
+}
+
+.page-history .history li.data-skip .date {
+  margin-right: 4px;
+}
+
+.page-history .history li.data-skip span {
+  color: rgba(15, 84, 78, 0.5);
+  font-size: 14px;
+}
+
 .page-history .history span {
+  padding-top: 4px;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .page-history .history .date {
-  width: 100%;
   color: rgba(15, 84, 78, 0.5);
   font-weight: 500;
   font-size: 14px;
@@ -866,7 +929,7 @@ li {
 
 .page-history .history .thumb {
   position: absolute;
-  left: 0;
+  right: 0;
   top: 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -904,7 +967,7 @@ li {
   border: 0;
   background: rgba(15, 84, 78, 0.03);
   color: rgba(15, 84, 78, 0.5);
-  font-size: 16px;
+  font-size: 14px;
   border-radius: 8px;
   cursor: pointer;
 }
@@ -1262,9 +1325,7 @@ li {
   top: 0;
   width: 100vw;
   height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;

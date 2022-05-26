@@ -546,6 +546,7 @@ li {
     .menu-day {
         position: relative;
         min-width: 120px;
+        min-height: 100%;
         overflow: hidden;
         &::after {
             content: '';
@@ -595,6 +596,20 @@ li {
                 font-weight: 400;
                 font-size: $f-sm;
             }
+            &:only-of-type {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+                background: $c-bg;
+                color: $c-alpha1;
+                box-shadow: none;
+                em {
+                    font-weight: 400;
+                    font-style: normal;
+                    font-size: $f-md;
+                }
+            }
         }
         & + .menu-day {
             box-shadow: -1px 0 $c-bd;
@@ -624,22 +639,68 @@ li {
             display: flex;
             flex-direction: column;
             margin-top: 16px;
-            padding-left: 140px;
+            padding-right: 140px;
             height: 100px;
+            &.data-skip {
+                position: relative;
+                height: 52px;
+                &::before {
+                    content: url('https://icongr.am/material/coffee.svg?size=24&color=0F544E');
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    box-sizing: border-box;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding-top: 4px;
+                    width: 120px;
+                    height: 52px;
+                    border: 1px dashed $c-alpha1;
+                    background: $c-bg;
+                    opacity: .25;
+                    border-radius: $radius;
+                }
+                .date {
+                    margin-right: 4px;
+                }
+                span {
+                    color: $c-alpha0;
+                    font-size: $f-df;
+                }
+            }
         }
         span {
+            padding-top: 4px;
             font-weight: 600;
-            font-size: $f-md;
+            font-size: $f-df;
         }
         .date {
-            width: 100%;
             color: $c-alpha0;
             font-weight: 500;
             font-size: $f-df;
         }
+        // .lineup {
+        //     position: absolute;
+        //     left: 0;
+        //     top: 0;
+        //     display: flex;
+        //     flex-direction: column;
+        //     align-items: center;
+        //     justify-content: center;
+        //     width: 120px;
+        //     height: 100px;
+        //     background: $c-bg;
+        //     border-radius: $radius;
+        //     overflow: hidden;
+        //     &::before {
+        //         content: url('https://icongr.am/material/leaf.svg?size=24&color=0F544E');
+        //         opacity: .4;
+        //     }
+        // }
         .thumb {
             position: absolute;
-            left: 0;
+            right: 0;
             top: 0;
             display: flex;
             align-items: center;
@@ -662,7 +723,7 @@ li {
             border: 0;
             background: $c-bg;
             color: $c-alpha0;
-            font-size: $f-md;
+            font-size: $f-df;
             border-radius: $radius;
             cursor: pointer;
             &::before {
@@ -931,7 +992,7 @@ li {
     top: 0;
     width: 100vw;
     height: 100vh;
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     justify-content: center;
