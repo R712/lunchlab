@@ -339,6 +339,7 @@ li {
 
 .app .page {
   width: 100%;
+  overflow: hidden;
 }
 
 .account {
@@ -709,7 +710,7 @@ li {
 
 .menu-week {
   position: relative;
-  max-width: 100vw;
+  max-width: 100%;
   margin: 0 -24px 0 0;
   -webkit-box-shadow: inset 0 0 1px rgba(15, 84, 78, 0.4);
           box-shadow: inset 0 0 1px rgba(15, 84, 78, 0.4);
