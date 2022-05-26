@@ -787,7 +787,7 @@ li {
 }
 
 .menu-week .menu-day dd span {
-  padding: 4px 8px;
+  padding: 8px 8px 4px;
   word-break: keep-all;
   font-weight: 500;
   text-overflow: ellipsis;
