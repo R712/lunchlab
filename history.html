@@ -15,10 +15,11 @@
     <link rel="stylesheet" href="css/ll-order.css">
     <title> Lunchlab </title>
   </head>
-  <body>
+  <body onload="loaderDelay(2000)" class="scrollx">
     <div class="root">
       <h1 class="brand wow fadeIn">
-        <img src="img/lunchlab-dish.svg" />
+        <img src="img/logo-gothic.svg" />
+        <span>점심을 먹는 새로운 습관</span>
       </h1>
       <div class="app">
         <input type="checkbox" id="nav-toggle">
@@ -57,6 +58,14 @@
               <strong>주문내역</strong>
               <p>좋았던 메뉴에 <img src="https://icongr.am/material/heart.svg?size=20&color=0F544E">를 주시면<br/>추후 메뉴 구성에 도움이 됩니다.</p>
             </div>
+            <div class="options">
+              <select>
+                <option>2022년 6월</option>
+                <option>2022년 5월</option>
+                <option>2022년 4월</option>
+                <option>2022년 3월</option>
+              </select>
+            </div>
             <ul class="history">
               <li>
                 <div class="thumb">
@@ -64,7 +73,7 @@
                 </div>
                 <span class="date">5월 15일 월요일</span>
                 <span>두부 스테이크 덮밥</span>
-                <button type="button" class="btn-like">만족했어요</button>
+                <button type="button" class="btn-like" onclick="isLiked(this)">만족했어요</button>
               </li>
               <li class="data-skip">
                 <span class="date">5월 15일 월요일</span>
@@ -76,7 +85,7 @@
                 </div>
                 <span class="date">5월 15일 월요일</span>
                 <span>감자 마요네즈 어묵 크로켓</span>
-                <button type="button" class="btn-like is-liked">만족했어요</button>
+                <button type="button" class="btn-like is-liked" onclick="isLiked(this)">만족했어요</button>
               </li>
               <li>
                 <div class="thumb">
@@ -84,7 +93,7 @@
                 </div>
                 <span class="date">5월 15일 월요일</span>
                 <span>버섯 두부면 바질파스타</span>
-                <button type="button" class="btn-like">만족했어요</button>
+                <button type="button" class="btn-like" onclick="isLiked(this)">만족했어요</button>
               </li>
               <li>
                 <div class="thumb">
@@ -92,7 +101,7 @@
                 </div>
                 <span class="date">5월 15일 월요일</span>
                 <span>탄단지 묵은지 키토김밥</span>
-                <button type="button" class="btn-like is-liked">만족했어요</button>
+                <button type="button" class="btn-like is-liked" onclick="isLiked(this)">만족했어요</button>
               </li>
             </ul>
 
@@ -127,24 +136,12 @@
       로더
     -->
     <div class="ll-loader">
-      <div class="art"></div>
-      <div class="msg">점심을 먹는 새로운 습관</div>
+      <div class="art wow fadeIn fast"></div>
+      <div class="msg wow fadeInUp fast">점심을 먹는 새로운 습관</div>
     </div>
 
     <script src="wow.min.js"></script>
-    <script type="text/javascript">
-
-      const Nav = document.querySelector('.nav');
-      const Brand = document.querySelector('h1.brand');
-      const Loader = document.querySelector('.ll-loader');
-
-      Loader.onclick = function() {
-        Loader.classList.toggle('fade');
-      }
-
-      new WOW().init();
-
-    </script>
+    <script src="js/order.js"></script>
 
   </body>
 </html>

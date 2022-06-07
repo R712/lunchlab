@@ -79,6 +79,23 @@ input:focus {
     outline: none;
     transition: ease-in-out all .15s;
 }
+select {
+    outline: none;
+    position: relative;
+    appearance: none;
+    padding: 0 30px 0 8px;
+    height: 36px;
+    border: 1px solid $c-bg;
+    background: $c-bg url("data:image/svg+xml,<svg height='10px' width='10px' viewBox='0 0 16 16' fill='%23A4BBB8' xmlns='http://www.w3.org/2000/svg'><path d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/></svg>") no-repeat;
+    background-position: calc(100% - 0.75rem) center !important;
+    color: $c-alpha0;
+    font-size: $f-md;
+    cursor: pointer;
+    &:focus {
+        border: 1px solid $c-bd;
+        color: $c-brand;
+    }
+}
 html {
     position: relative;
     margin: 0;
@@ -112,6 +129,10 @@ body {
 }
 li {
     list-style: none;
+}
+::selection {
+    background: $c-alpha1;
+    color: $c-white;
 }
 
 .root {
@@ -354,16 +375,17 @@ li {
                 transition: all .2s ease-in-out;
             }
             &[data-kind]::after {
-                content: url('https://icongr.am/material/leaf.svg?size=24&color=FFFFFF');
+                content: '가벼운한끼';
                 z-index: 1;
                 position: absolute;
                 right: 0;
                 top: 0;
                 display: flex;
                 justify-content: center;
-                padding: 8px 0;
-                width: 40px;
+                padding: 4px 8px;
+                background-color: $c-brand;
                 color: $c-white;
+                font-size: $f-sm;
                 border-radius: 0 0 0 $radius;
             }
             // &[data-kind=fresh]::after {
@@ -376,13 +398,13 @@ li {
             //     content: url('https://icongr.am/material/rice.svg?size=24&color=FFFFFF');
             // }
             &[data-kind=fresh]::after {
-                content: url('https://icongr.am/material/leaf.svg?size=24&color=FFFFFF');
+                content: '프레시박스';
             }
             &[data-kind=meal]::after {
-                content: url('https://icongr.am/material/silverware-fork-knife.svg?size=24&color=FFFFFF');
+                content: '든든한끼';
             }
             &[data-kind=yogurt]::after {
-                content: url('https://icongr.am/material/rice.svg?size=24&color=FFFFFF');
+                content: '그릭요거트';
             }
         }
         input {
@@ -418,7 +440,7 @@ li {
         a {
             padding-top: 6px;
             color: $c-alpha0;
-            font-weight: 400;
+            font-weight: 500;
             font-size: $f-sm;
         }
         &.is-checked {
@@ -537,27 +559,29 @@ li {
     position: relative;
     max-width: 100%;
     margin: 0 -24px 0 0;
-    box-shadow: inset 0 0 1px $c-alpha1;
     overflow-x: auto;
+    &::before {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 40px;
+        height: 100%;
+        background: linear-gradient(to left, $c-bg, transparent);
+    }
     .menu-week-inner {
         display: flex;
         flex-wrap: nowrap;
         flex-direction: row;
+        box-shadow: inset 0 0 1px $c-alpha1;
+        overflow: auto;
+        scroll-behavior: smooth;
     }
     .menu-day {
         position: relative;
         min-width: 120px;
         min-height: 100%;
         overflow: hidden;
-        &::after {
-            content: '';
-            position: absolute;
-            right: 0;
-            top: 0;
-            width: 40px;
-            height: 100%;
-            background: linear-gradient(to left, $c-bg, transparent);
-        }
         dt {
             display: flex;
             align-items: center;
@@ -732,12 +756,12 @@ li {
                 opacity: .4;
                 margin-right: 4px;
             }
-            &:hover,
             &.is-liked {
                 background: none;
                 box-shadow: inset 0 0 1px $c-alpha0;
                 &::before {
                     content: url('https://icongr.am/material/heart.svg?size=18&color=0F544E');
+                    animation: likePop .4s ease;
                 }
             }
         }
@@ -842,12 +866,12 @@ li {
     opacity: 0;
     z-index: 200;
     position: fixed;
-    left: 0;
-    top: -100vh;
+    left: -100vw;
+    top: 0;
     width: 100vw;
     height: 100vh;
     backdrop-filter: blur(12px);
-    transition: all .4s ease-in-out;
+    transition: all .25s ease-in-out;
     overflow: hidden;
     .btn-close {
         z-index: 1;
@@ -917,7 +941,7 @@ li {
     }
     &.fade {
         opacity: 1;
-        top: 0;
+        left: 0;
     }
 }
 
@@ -933,7 +957,7 @@ li {
     align-items: center;
     justify-content: center;
     backdrop-filter: blur(12px);
-    transition: all .4s ease-in-out;
+    transition: all .25s ease-in-out;
     overflow: hidden;
     .toast-inner {
         position: relative;
@@ -1046,6 +1070,25 @@ li {
     }
 }
 
+.options {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 120px;
+        height: 32px;
+        border: 0;
+        background: $c-alpha1;
+        cursor: grab;
+        &:nth-child(2) {
+            background: $c-alpha0;
+        }
+    }
+}
+
 .txt-price {
     margin-top: 12px;
     color: $c-brand;
@@ -1064,13 +1107,14 @@ li {
 //  로더
 //
 .ll-loader {
+    opacity: 1;
     z-index: 99;
     position: fixed;
     left: 0;
     top: 0;
     width: 100vw;
     height: 100vh;
-    display: none;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -1079,27 +1123,13 @@ li {
     cursor: wait;
     .art {
         position: relative;
-        width: 160px;
-        height: 100px;
-        background: url('../img/art.svg') no-repeat top center;
-        background-size: 100px;
-        animation: ll-art 3s infinite;
-        &::before,
-        &::after {
-            content: '';
-            z-index: 1;
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 24px;
-            background: linear-gradient(to bottom, $c-white, rgba($c-white, 0));
-        }
-        &::after {
-            top: inherit;
-            bottom: 0;
-            background: linear-gradient(to top, $c-white, rgba($c-white, 0));
-        }
+        width: 100%;
+        height: 76px;
+        background: url('../img/bg-art.svg') repeat-x left center;
+        background-size: 304px;
+        animation: ll-art 1.2s infinite;
+        animation-timing-function: steps(3, end);
+        opacity: .15;
     }
     .msg {
         z-index: 1;
@@ -1110,32 +1140,52 @@ li {
         margin-top: 20px;
         padding: 6px 12px;
         background: $c-bg;
-        color: $c-brand;
+        color: $c-alpha0;
         font-weight: 500;
         font-size: $f-sm;
         border-radius: 4px;
     }
     &.fade {
-        display: none;
+        z-index: -1;
+        opacity: 0;
     }
 }
 @keyframes ll-art {
-    20% {
-        background-position: top center;
+    0% {
+        background-position: left center;
     }
     50% {
-        background-position: bottom center;
+        background-position: -304px center;
     }
-    80% {
-        background-position: center center;
+    100% {
+        background-position: left center;
     }
 }
 
+@keyframes likePop {
+    50% {
+        transform: scale(1.25);
+    }
+}
+
+//
+//  모바일 해상도용 토글 버튼 숨김처리
+//
 #nav-toggle,
 .btn-toggle {
     display: none;
 }
 
+//
+//  레이어 띄울 때 바디 스크롤 제거
+//
+.scrollx {
+    overflow: hidden;
+}
+
+//
+//  해상도 대응 모바일 및 태블릿패드
+//
 @media screen and (max-width: 1000px) {
     body::before {
         position: fixed;
@@ -1273,6 +1323,7 @@ li {
         min-width: 100vw !important;
     }
     .app-footer {
+        margin-top: 24px;
         padding-top: 40px;
     }
     .layer {
@@ -1374,5 +1425,8 @@ li {
                 background: $c-bg;
             }
         }
+    }
+    .menu-week-inner {
+        cursor: col-resize;
     }
 }

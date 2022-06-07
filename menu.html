@@ -18,7 +18,8 @@
   <body>
     <div class="root">
       <h1 class="brand wow fadeIn">
-        <img src="img/lunchlab-dish.svg" />
+        <img src="img/logo-gothic.svg" />
+        <span>점심을 먹는 새로운 습관</span>
       </h1>
       <div class="app">
         <input type="checkbox" id="nav-toggle">
@@ -55,7 +56,7 @@
           <section class="page-menu">
             <div class="headline">
               <strong>메뉴 미리보기</strong>
-              <p>약 일주일의 정보를 제공합니다.</p>
+              <p>약 8일의 정보를 제공합니다.</p>
             </div>
             <!-- <ul class="menuboard">
               <li>
@@ -145,17 +146,20 @@
                 </ul>
               </li>
             </ul> -->
+            
+            <div class="options">
+              <button onclick="menuWeekPrev()"><img src="https://icongr.am/material/arrow-left.svg?size=16&color=FFFFFF" /></button>
+              <button onclick="menuWeekNext()"><img src="https://icongr.am/material/arrow-right.svg?size=16&color=FFFFFF" /></button>
+            </div>
+
             <div class="menu-week">
               <div class="menu-week-inner">
                 <dl class="menu-day">
                   <dt>
                     <strong>3</strong>
-                    <span>화</span>
+                    <span>금</span>
                   </dt>
                   <dd>
-                    <div class="thumb">
-                      <img src="https://crcf.cookatmarket.com/product/images/2020/09/toke_1600997967_4951_320.jpg">
-                    </div>
                     <span>두부 스테이크 덮밥</span>
                     <small>시래기 장국</small>
                     <small>현미밥</small>
@@ -163,18 +167,12 @@
                     <small>제육볶음</small>
                   </dd>
                   <dd>
-                    <div class="thumb">
-                      <img src="https://crcf.cookatmarket.com/product/images/2021/01/zika_1610345163_4334_320.jpg">
-                    </div>
                     <span>하이라이스 정식</span>
                     <small>하이라이스</small>
                     <small>치킨가라아게</small>
                     <small>장국</small>
                   </dd>
                   <dd>
-                    <div class="thumb">
-                      <img src="https://crcf.cookatmarket.com/product/images/2022/02/pile_1645580127_9298_320.jpg">
-                    </div>
                     <span>훈제 오리 매콤 덮밥</span>
                     <small>하이라이스</small>
                     <small>치킨가라아게</small>
@@ -185,48 +183,6 @@
                       <img src="./pic-yogurt.jpeg">
                     </div>
                     <span>블루베리 그릭요거트</span>
-                    <small>하이라이스</small>
-                    <small>치킨가라아게</small>
-                    <small>장국</small>
-                  </dd>
-                </dl>
-                <dl class="menu-day">
-                  <dt>
-                    <strong>4</strong>
-                    <span>수</span>
-                  </dt>
-                  <dd>
-                    <em>제헌절</em>
-                  </dd>
-                </dl>
-                <dl class="menu-day">
-                  <dt>
-                    <strong>5</strong>
-                    <span>목</span>
-                  </dt>
-                  <dd>
-                    <div class="thumb">
-                      <img src="https://crcf.cookatmarket.com/product/images/2021/03/sowo_1615801368_8171_320.jpg">
-                    </div>
-                    <span>두부 스테이크 덮밥</span>
-                    <small>하이라이스</small>
-                    <small>치킨가라아게</small>
-                    <small>장국</small>
-                  </dd>
-                  <dd>
-                    <div class="thumb">
-                      <img src="https://crcf.cookatmarket.com/product/images/2021/10/xiju_1634548512_9807_320.jpg">
-                    </div>
-                    <span>파프리카 키토 김밥</span>
-                    <small>하이라이스</small>
-                    <small>치킨가라아게</small>
-                    <small>장국</small>
-                  </dd>
-                  <dd>
-                    <div class="thumb">
-                      <img src="https://crcf.cookatmarket.com/product/images/2020/04/jabu_1585705385_4983_320.jpg">
-                    </div>
-                    <span>닭가슴살 곤약 계란볶음밥</span>
                     <small>하이라이스</small>
                     <small>치킨가라아게</small>
                     <small>장국</small>
@@ -235,85 +191,116 @@
                 <dl class="menu-day">
                   <dt>
                     <strong>6</strong>
-                    <span>금</span>
+                    <span>월</span>
                   </dt>
                   <dd>
-                    <div class="thumb">
-                      <img src="https://crcf.cookatmarket.com/product/images/2021/04/xici_1619414910_6541_720.jpg">
-                    </div>
+                    <em>현충일</em>
+                  </dd>
+                </dl>
+                <dl class="menu-day">
+                  <dt>
+                    <strong>7</strong>
+                    <span>화</span>
+                  </dt>
+                  <dd>
                     <span>두부 스테이크 덮밥</span>
+                    <small>하이라이스</small>
+                    <small>치킨가라아게</small>
+                    <small>장국</small>
                   </dd>
                   <dd>
-                    <div class="thumb">
-                      <img src="https://crcf.cookatmarket.com/product/images/2021/10/zexu_1634200112_7149_720.jpg">
-                    </div>
                     <span>파프리카 키토 김밥</span>
+                    <small>하이라이스</small>
+                    <small>치킨가라아게</small>
+                    <small>장국</small>
                   </dd>
                   <dd>
-                    <div class="thumb">
-                      <img src="https://crcf.cookatmarket.com/product/images/2021/03/civi_1616505251_4381_720.jpg">
-                    </div>
                     <span>닭가슴살 곤약 계란볶음밥</span>
+                    <small>하이라이스</small>
+                    <small>치킨가라아게</small>
+                    <small>장국</small>
+                  </dd>
+                </dl>
+                <dl class="menu-day">
+                  <dt>
+                    <strong>8</strong>
+                    <span>수</span>
+                  </dt>
+                  <dd>
+                    <span>두부 스테이크 덮밥</span>
+                    <small>볶음깍두기</small>
+                    <small>우거지국</small>
+                    <small>요구르트</small>
                   </dd>
                   <dd>
-                    <div class="thumb">
-                      <img src="./pic-yogurt.jpeg">
-                    </div>
+                    <span>파프리카 키토 김밥</span>
+                    <small>우거지국</small>
+                    <small>볶음깍두기</small>
+                    <small>우거지국</small>
+                  </dd>
+                  <dd>
+                    <span>닭가슴살 곤약 계란볶음밥</span>
+                    <small>볶음깍두기</small>
+                    <small>우거지국</small>
+                  </dd>
+                  <dd>
                     <span>블루베리 그릭요거트</span>
+                    <small>볶음깍두기</small>
+                    <small>우거지국</small>
                   </dd>
                 </dl>
                 <dl class="menu-day">
                   <dt>
                     <strong>9</strong>
-                    <span>월</span>
+                    <span>목</span>
                   </dt>
                   <dd>
-                    <div class="thumb">
-                      <img src="https://crcf.cookatmarket.com/product/images/2020/09/toke_1600997967_4951_320.jpg">
-                    </div>
                     <span>두부 스테이크 덮밥</span>
+                    <small>시래기 장국</small>
+                    <small>현미밥</small>
+                    <small>시래기 장국</small>
+                    <small>제육볶음</small>
                   </dd>
                   <dd>
-                    <div class="thumb">
-                      <img src="https://crcf.cookatmarket.com/product/images/2021/01/zika_1610345163_4334_320.jpg">
-                    </div>
                     <span>파프리카 키토 김밥</span>
+                    <small>볶음깍두기</small>
+                    <small>우거지국</small>
                   </dd>
                   <dd>
-                    <div class="thumb">
-                      <img src="https://crcf.cookatmarket.com/product/images/2022/02/pile_1645580127_9298_320.jpg">
-                    </div>
                     <span>훈제 오리 매콤 덮밥</span>
+                    <small>볶음깍두기</small>
+                    <small>우거지국</small>
                   </dd>
                   <dd>
                     <div class="thumb">
                       <img src="./pic-yogurt.jpeg">
                     </div>
                     <span>블루베리 그릭요거트</span>
+                    <small>볶음깍두기</small>
+                    <small>우거지국</small>
                   </dd>
                 </dl>
                 <dl class="menu-day">
                   <dt>
                     <strong>10</strong>
-                    <span>화</span>
+                    <span>금</span>
                   </dt>
                   <dd>
-                    <div class="thumb">
-                      <img src="https://crcf.cookatmarket.com/product/images/2021/04/xici_1619414910_6541_720.jpg">
-                    </div>
                     <span>두부 스테이크 덮밥</span>
+                    <small>볶음깍두기</small>
+                    <small>우거지국</small>
                   </dd>
                   <dd>
-                    <div class="thumb">
-                      <img src="https://crcf.cookatmarket.com/product/images/2021/10/zexu_1634200112_7149_720.jpg">
-                    </div>
                     <span>파프리카 키토 김밥</span>
+                    <small>시래기 장국</small>
+                    <small>현미밥</small>
+                    <small>시래기 장국</small>
+                    <small>제육볶음</small>
                   </dd>
                   <dd>
-                    <div class="thumb">
-                      <img src="https://crcf.cookatmarket.com/product/images/2021/03/civi_1616505251_4381_720.jpg">
-                    </div>
                     <span>닭가슴살 곤약 계란볶음밥</span>
+                    <small>볶음깍두기</small>
+                    <small>우거지국</small>
                   </dd>
                 </dl>
               </div>
@@ -344,16 +331,45 @@
         <h6>&copy; 2022 <strong>lunchlab</strong> all rights reserved</h6>
       </footer>
     </div>
-    
+
+    <!--
+      레이어 샘플
+      메뉴 상세보기
+    -->
+    <div class="layer">
+      <div class="blind"></div>
+      <div class="layer-inner">
+        <button class="btn-close" onclick="layerToggle()"><img src="https://icongr.am/material/close.svg?size=24&color=FFFFFF"></button>
+        <div class="thumb" data-kind="fresh">
+          <img src="https://crcf.cookatmarket.com/product/images/2020/03/kida_1583141953_9007_720.jpg">
+        </div>
+        <div class="desc">
+          <p>
+            <h4>연어 베이컨 샐러드</h4>
+            <small>연어, 베이컨 ,토마토, 바질, 치커리, 리코타치즈 등</small>
+            <small>연어, 베이컨 ,토마토, 바질, 치커리, 리코타치즈 등</small>
+            <em class="txt-price">7,900</em>
+          </p>
+          <p>
+            <strong>원산지 정보</strong>
+            <small>연어, 옥수수, 파프리카: 국내산</small>
+            <small>밀가루: 프랑스산</small>
+          </p>
+          <p>
+            <strong>알러지 정보</strong>
+            <small>탄수화물 알러지 유의</small>
+            <small>치즈 알러지 유의</small>
+          </p>
+          <div class="btn-group">
+            <button class="btn" onclick="layerToggle()">닫기</button>
+            <button class="btn btn-primary" onclick="toastToggle()">선택하기</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="wow.min.js"></script>
-    <script type="text/javascript">
-
-      const Nav = document.querySelector('.nav');
-      const Brand = document.querySelector('h1.brand');
-
-      new WOW().init();
-
-    </script>
+    <script src="js/order.js"></script>
 
   </body>
 </html>

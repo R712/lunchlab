@@ -15,10 +15,10 @@
     <link rel="stylesheet" href="css/ll-order.css">
     <title> Lunchlab </title>
   </head>
-  <body>
+  <body onload="writeDate()">
     <div class="root">
       <h1 class="brand wow fadeIn">
-        <img src="img/lunchlab-dish.svg" />
+        <img src="img/logo-gothic.svg" />
         <span>점심을 먹는 새로운 습관</span>
       </h1>
       <div class="app">
@@ -55,7 +55,7 @@
         <main class="page wow fadeIn">
           <section class="page-order">
             <div class="headline">
-              <div class="js-date"><!-- 날짜 --></div>
+              <div class="js-date"><!-- 오늘 날짜 --></div>
               <p>점심 메뉴를 선택해주세요.</p>
             </div>
             <form>
@@ -71,7 +71,7 @@
                   <p>
                     <strong>연어 베이컨 샐러드</strong>
                     <small>연어, 베이컨 ,토마토, 바질, 치커리, 리코타치즈 등</small>
-                    <a href="#" class="link-layer">자세히보기</a>
+                    <a onclick="layerToggle()" class="link-layer">자세히보기</a>
                   </p>
                 </label>
                 <label>
@@ -80,7 +80,7 @@
                   <p>
                     <strong>탄단지 묵은지 키토김밥</strong>
                     <small>묵은지, 계란, 게살, 이천쌀, 광천김, 천일염 등</small>
-                    <a href="#" class="link-layer">자세히보기</a>
+                    <a onclick="layerToggle()" class="link-layer">자세히보기</a>
                   </p>
                 </label>
                 <label>
@@ -89,7 +89,7 @@
                   <p>
                     <strong>연어 크림 스테이크</strong>
                     <small>연어, 우유, 생크림, 바질, 샐러리, 통후추 등</small>
-                    <a href="#" class="link-layer">자세히보기</a>
+                    <a onclick="layerToggle()" class="link-layer">자세히보기</a>
                   </p>
                 </label>
                 <label>
@@ -98,13 +98,13 @@
                   <p>
                     <strong>트리플베리 그릭요거트</strong>
                     <small>블루베리, 딸기, 크랜베리, 그릭요거트, 그래놀라 등</small>
-                    <a href="#" class="link-layer">자세히보기</a>
+                    <a onclick="layerToggle()" class="link-layer">자세히보기</a>
                   </p>
                 </label>
               </div>
-              <footer class="wow slideInUp" data-wow-delay=".4s">
+              <footer class="wow slideInUp slow" data-wow-delay="1s">
                 <p class="msg"><strong>3시간 23분 후 7,900원</strong>이 결제됩니다.</p>
-                <button type="button" class="btn btn-order">메뉴 변경하기</button>
+                <button type="button" class="btn btn-order" onclick="toastToggle()">메뉴 변경하기</button>
               </footer>
             </form>
           </section>
@@ -141,7 +141,7 @@
     <div class="layer">
       <div class="blind"></div>
       <div class="layer-inner">
-        <button class="btn-close"><img src="https://icongr.am/material/close.svg?size=24&color=FFFFFF"></button>
+        <button class="btn-close" onclick="layerToggle()"><img src="https://icongr.am/material/close.svg?size=24&color=FFFFFF"></button>
         <div class="thumb" data-kind="fresh">
           <img src="https://crcf.cookatmarket.com/product/images/2020/03/kida_1583141953_9007_720.jpg">
         </div>
@@ -163,8 +163,8 @@
             <small>치즈 알러지 유의</small>
           </p>
           <div class="btn-group">
-            <button class="btn">닫기</button>
-            <button class="btn btn-primary">선택하기</button>
+            <button class="btn" onclick="layerToggle()">닫기</button>
+            <button class="btn btn-primary" onclick="toastToggle()">선택하기</button>
           </div>
         </div>
       </div>
@@ -177,55 +177,11 @@
           <span><strong>연어 베이컨 샐러드</strong></span>
           <span>메뉴가 선택되었습니다.</span>
         </div>
-        <button class="btn btn-deep">닫기</button>
+        <button class="btn btn-deep" onclick="toastToggle()">닫기</button>
       </div>
     </div>
 
     <script src="wow.min.js"></script>
-    <script type="text/javascript">
-
-    const Nav = document.querySelector('.nav');
-    const Brand = document.querySelector('h1.brand');
-    let layerCall = document.querySelector('.link-layer');
-    let layerClose = document.querySelector('.layer .btn-close');
-    let layerDetail = document.querySelector('.layer');
-    let orderItem = document.querySelectorAll('.page-order label input');
-    let btnOrder = document.querySelector('.btn-order');
-    let toastOrder = document.querySelector('.toast');
-    let toastClose = document.querySelector('.toast .btn');
-
-    btnOrder.onclick = () => {
-      toastOrder.classList.toggle('fade');
-    };
-    toastClose.onclick = () => {
-      toastOrder.classList.toggle('fade');
-    };
-
-    layerCall.onclick = () => {
-      layerDetail.classList.toggle('fade');
-    };
-    layerClose.onclick = () => {
-      layerDetail.classList.toggle('fade');
-    };
-
-    orderItem.change = () => {
-      if (this.checked) {
-        this.closest('label').addClassList('is-checked');
-      } else {
-        this.closest('label').removeClassList('is-checked');
-      }
-    };
-
-    new WOW().init();
-  
-    const jsDate = document.querySelector('.js-date');
-    let today = new Date();
-    let month = today.getMonth() + 1;
-    let date = today.getDate();
-    let day = today.getDay();
-    let week = ['일', '월', '화', '수', '목', '금', '토'];
-    jsDate.innerText = month + '월 ' + date + '일 ' + week[day] + '요일';
-
-    </script>
+    <script src="js/order.js"></script>
   </body>
 </html>
