@@ -56,57 +56,19 @@
           <section class="page-order">
             <div class="headline">
               <div class="js-date"><!-- 오늘 날짜 --></div>
-              <p>점심 메뉴를 선택해주세요.</p>
+              <p>주문 마감 후 준비되고 있어요.</p>
             </div>
-            <form>
-              <label class="in-single">
-                <input type="radio" name="order-choose">
-                <small>내일은 필요없어요</small>
-                <strong>건너뛰기</strong>
-              </label>
-              <div class="grid-2col">
-                <label>
-                  <input type="radio" name="order-choose" checked>
-                  <span class="thumb" data-kind="fresh"><img src="https://crcf.cookatmarket.com/product/images/2020/03/kida_1583141953_9007_720.jpg"></span>
-                  <p>
-                    <strong>연어 베이컨 샐러드</strong>
-                    <small>연어, 베이컨 ,토마토, 바질, 치커리, 리코타치즈 등</small>
-                    <a onclick="layerToggle()" class="link-layer">자세히보기</a>
-                  </p>
-                </label>
-                <label>
-                  <input type="radio" name="order-choose">
-                  <span class="thumb" data-kind="meal"><img src="https://crcf.cookatmarket.com/product/images/2021/09/sogi_1631609142_3301_720.jpg"></span>
-                  <p>
-                    <strong>탄단지 묵은지 키토김밥</strong>
-                    <small>묵은지, 계란, 게살, 이천쌀, 광천김, 천일염 등</small>
-                    <a onclick="layerToggle()" class="link-layer">자세히보기</a>
-                  </p>
-                </label>
-                <label>
-                  <input type="radio" name="order-choose">
-                  <span class="thumb" data-kind="meal"><img src="https://crcf.cookatmarket.com/product/images/2021/04/keve_1618216209_5812_720.jpg"></span>
-                  <p>
-                    <strong>연어 크림 스테이크</strong>
-                    <small>연어, 우유, 생크림, 바질, 샐러리, 통후추 등</small>
-                    <a onclick="layerToggle()" class="link-layer">자세히보기</a>
-                  </p>
-                </label>
-                <label>
-                  <input type="radio" name="order-choose">
-                  <span class="thumb" data-kind="yogurt"><img src="./pic-yogurt.jpeg"></span>
-                  <p>
-                    <strong>트리플베리 그릭요거트</strong>
-                    <small>블루베리, 딸기, 크랜베리, 그릭요거트, 그래놀라 등</small>
-                    <a onclick="layerToggle()" class="link-layer">자세히보기</a>
-                  </p>
-                </label>
-              </div>
-              <footer class="wow slideInUp slow" data-wow-delay="1s">
-                <p class="msg"><strong>3시간 23분 후 7,900원</strong>이 결제됩니다.</p>
-                <button type="button" class="btn btn-order" onclick="toastToggle()">메뉴 변경하기</button>
-              </footer>
-            </form>
+            <div class="item-ordered">
+              <span class="thumb" data-kind="fresh"><img src="https://crcf.cookatmarket.com/product/images/2020/03/kida_1583141953_9007_720.jpg"></span>
+              <p>
+                <strong>연어 베이컨 샐러드</strong>
+                <small>연어, 베이컨 ,토마토, 바질, 치커리, 리코타치즈 등</small>
+                <a onclick="layerToggle()" class="link-layer">자세히보기</a>
+              </p>
+            </div>
+            <div class="btn-group">
+              <button class="btn btn-info" onclick="linkPreview()"><img src="https://icongr.am/material/chef-hat.svg?size=20&color=0F544E"> 다음 메뉴 미리보기</button>
+            </div>
           </section>
         </main>
       </div>
@@ -167,17 +129,6 @@
             <button class="btn btn-primary" onclick="toastToggle()">선택하기</button>
           </div>
         </div>
-      </div>
-    </div>
-
-    <div class="toast">
-      <div class="toast-inner">
-        <div class="toast-msg">
-          <span class="lineup-label" data-lineup="fresh">프레시박스</span>
-          <span><strong>연어 베이컨 샐러드</strong></span>
-          <span>메뉴가 선택되었습니다.</span>
-        </div>
-        <button class="btn btn-deep" onclick="linkReady()">닫기</button>
       </div>
     </div>
 

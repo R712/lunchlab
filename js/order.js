@@ -30,6 +30,10 @@ layerToggle = () => {
     layerDetail.classList.toggle('fade');
     pageBody.classList.toggle('scrollx');
 }
+layerLineupToggle = () => {
+    document.querySelector('.layer[data-layer=layer-lineup').classList.toggle('fade');
+    pageBody.classList.toggle('scrollx');
+}
 
 //
 //  로더 토글
@@ -52,6 +56,13 @@ menuWeekNext = () => {
 
 menuWeekPrev = () => {
     menuPreviewWrap.scrollLeft -= 120;
+}
+
+linkReady = () => {
+    location.href = 'ready.html';
+}
+linkPreview = () => {
+    location.href = 'menu.html';
 }
 
 //

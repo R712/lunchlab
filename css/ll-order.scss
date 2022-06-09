@@ -4,6 +4,7 @@
 
 // 세팅
 $c-brand: #0F544E;
+$c-highlight: #01AB33;
 $c-cheese: #F9BC6E;
 $c-dark: #001C34;
 $c-gray: rgba($c-dark, .4);
@@ -34,6 +35,9 @@ button {
     &:hover::after,
     &:hover * {
         transition: ease-in-out all .25s;
+    }
+    &:disabled {
+        opacity: .25;
     }
 }
 input[type=radio] {
@@ -485,6 +489,78 @@ li {
             }
         }
     }
+    .item-ordered {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        background: $c-bg;
+        border-radius: $radius;
+        overflow: hidden;
+        cursor: pointer;
+        box-shadow: inset 0 0 1px $c-alpha1;
+        overflow: hidden;
+        .thumb {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 150px;
+            overflow: hidden;
+            transition: all .2s ease-in-out;
+            img {
+                display: block;
+                min-width: 100%;
+                min-height: 150px;
+                transition: all .2s ease-in-out;
+            }
+            &[data-kind]::after {
+                content: '가벼운한끼';
+                z-index: 1;
+                position: absolute;
+                right: 0;
+                top: 0;
+                display: flex;
+                justify-content: center;
+                padding: 4px 8px;
+                background-color: $c-brand;
+                color: $c-white;
+                font-size: $f-sm;
+                border-radius: 0 0 0 $radius;
+            }
+            &[data-kind=fresh]::after {
+                content: '프레시박스';
+            }
+            &[data-kind=meal]::after {
+                content: '든든한끼';
+            }
+            &[data-kind=yogurt]::after {
+                content: '그릭요거트';
+            }
+        }
+        p {
+            display: flex;
+            flex-direction: column;
+            padding: 14px 16px;
+        }
+        strong {
+            margin-bottom: 4px;
+            color: $c-brand;
+            font-size: $f-lg;
+            line-height: 1.4;
+            word-break: keep-all;
+        }
+        small {
+            color: $c-alpha0;
+            font-size: $f-sm;
+            word-break: keep-all;
+        }
+        a {
+            padding-top: 6px;
+            color: $c-alpha0;
+            font-weight: 500;
+            font-size: $f-sm;
+        }
+    }
 }
 
 .page-menu {
@@ -790,14 +866,14 @@ li {
         display: flex;
         flex-direction: column;
         margin-top: 20px;
-        padding: 24px 24px 16px;
+        padding: 16px 24px 20px;
         border: 1px solid $c-bd;
         background: $c-white;
         border-radius: $radius;
         h4 {
             margin-bottom: 10px;
             color: $c-alpha1;
-            font-size: $f-md; 
+            font-size: $f-df; 
         }
         strong {
             padding-top: 4px;
@@ -807,7 +883,7 @@ li {
             margin-bottom: 4px;
             color: $c-alpha1;
             font-weight: 400;
-            font-size: $f-md;
+            font-size: $f-df;
             text-overflow: ellipsis;
             word-break: keep-all;
         }
@@ -838,6 +914,9 @@ li {
             &[data-kind=payment]::before {
                 content: url('https://icongr.am/material/credit-card.svg?size=24&color=0F544E');
             }
+            &[data-kind=fresh]::before {
+                content: url('https://icongr.am/material/leaf.svg?size=24&color=0F544E');
+            }
         }
         footer {
             display: flex;
@@ -862,6 +941,10 @@ li {
     }
 }
 
+
+//
+//  레이어
+//
 .layer {
     opacity: 0;
     z-index: 200;
@@ -883,7 +966,6 @@ li {
         background: rgba($c-brand, .4);
         border: 0;
         backdrop-filter: blur(4px);
-        border-radius: 0 0 0 12px;
         cursor: pointer;
     }
     .layer-inner {
@@ -945,6 +1027,9 @@ li {
     }
 }
 
+//
+//  토스트 메시지
+//
 .toast {
     opacity: 0;
     z-index: 200;
@@ -1012,8 +1097,14 @@ li {
     }
 }
 
+//
+//  기본 버튼
+//
 .btn {
     outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 0 20px;
     border: 1px solid $c-bd;
     height: 48px;
@@ -1055,7 +1146,6 @@ li {
         color: rgba($c-white, .6);
     }
 }
-
 .btn-group {
     display: flex;
     margin-top: 24px;
@@ -1064,12 +1154,24 @@ li {
         & + .btn {
             margin-left: 8px;
         }
+        &:only-child {
+            flex-basis: 100%;
+        }
     }
     .btn-primary {
         flex-basis: 100%;
     }
+    .btn-info {
+        background: $c-white;
+        color: $c-alpha0;
+        img {
+            opacity: .4;
+            margin-right: 8px;
+        }
+    }
 }
 
+//  셀렉트박스 드롭다운
 .options {
     margin-top: 40px;
     display: flex;
@@ -1089,6 +1191,7 @@ li {
     }
 }
 
+//  가격
 .txt-price {
     margin-top: 12px;
     color: $c-brand;
@@ -1161,7 +1264,7 @@ li {
         background-position: left center;
     }
 }
-
+//  만족했어요 하트 펌핑
 @keyframes likePop {
     50% {
         transform: scale(1.25);
@@ -1285,6 +1388,68 @@ li {
     .layer {
         .layer-inner {
             margin: 28px auto;
+        }
+    }
+}
+
+.form {
+    padding: 24px;
+    color: $c-brand;
+    h4 {
+        font-size: $f-lg;
+    }
+    .desc {
+        padding: 10px 0 20px;
+        color: $c-alpha0;
+        font-size: $f-sm;
+    }
+    label {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        background: $c-white;
+        padding: 16px 14px 16px 50px;
+        border-radius: $radius;
+        cursor: pointer;
+        overflow: hidden;
+        input {
+            z-index: 1;
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            margin-top: -10px;
+            width: 20px;
+            height: 20px;
+            &:checked + .thumb {
+                opacity: 1;
+                filter: none;
+            }
+        }
+        p {
+            display: flex;
+            flex-direction: column;
+            padding: 14px 16px;
+        }
+        strong {
+            margin-bottom: 4px;
+            color: $c-brand;
+            font-size: $f-md;
+            line-height: 1.4;
+            word-break: keep-all;
+        }
+        small {
+            color: $c-alpha0;
+            font-size: $f-sm;
+            word-break: keep-all;
+        }
+        &.is-checked {
+            background: $c-bg;
+            strong::after {
+                content: '선택됨';
+                padding-left: 4px;
+                color: $c-highlight;
+                font-size: $f-sm;
+            }
         }
     }
 }

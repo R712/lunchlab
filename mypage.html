@@ -60,25 +60,28 @@
             </div>
             <div class="info-card">
               <h4>배송지</h4>
-              <div class="info-item" data-kind="address">
+              <div class="info-item" data-kind="address" onclick="layerToggle()">
                 <strong>한아름치과</strong>
                 <small>서울 노원구 동일로174길 한아름빌딩 3F</small>
               </div>
-              <footer>
-                <a href="#">변경하기</a>
-                <a href="#">휴면하기</a>
-              </footer>
+            </div>
+            <div class="info-card">
+              <h4>구독 라인업</h4>
+              <div class="info-item" data-kind="fresh" onclick="layerLineupToggle()">
+                <strong>프레시박스</strong>
+                <small>기본으로 선택되는 메뉴</small>
+              </div>
             </div>
             <div class="info-card">
               <h4>결제정보</h4>
-              <div class="info-item" data-kind="payment">
+              <div class="info-item" data-kind="payment" onclick="layerToggle()">
                 <strong>자동결제</strong>
                 <small>신한카드 94742100****9200</small>
               </div>
-              <footer>
-                <a href="#">변경하기</a>
-                <a href="#">삭제하기</a>
-              </footer>
+              <!-- <footer>
+                <a onclick="layerToggle()">변경하기</a>
+                <a onclick="layerToggle()">삭제하기</a>
+              </footer> -->
             </div>
           </section>
         </main>
@@ -105,6 +108,72 @@
         </div>
         <h6>&copy; 2022 <strong>lunchlab</strong> all rights reserved</h6>
       </footer>
+    </div>
+
+    <!--
+      레이어 샘플
+      메뉴 상세보기
+    -->
+    <div class="layer" data-layer="layer-address">
+      <div class="blind"></div>
+      <div class="layer-inner">
+        <button class="btn-close" onclick="layerToggle()"><img src="https://icongr.am/material/close.svg?size=24&color=FFFFFF"></button>
+        <div class="form">
+          <h4>배송지 변경</h4>
+          <p class="desc">점심을 배송받을 장소를 선택해주세요.</p>
+          <label class="in-single is-checked">
+            <input type="radio" name="address" checked>
+            <strong>JY아지트</strong>
+            <small>서울 강남구 정연여기로 80길 12, 2F</small>
+          </label>
+          <label class="in-single">
+            <input type="radio" name="address">
+            <strong>런치랩오피스</strong>
+            <small>서울 노원구 성수로 12길 5</small>
+          </label>
+          <label class="in-single">
+            <input type="radio" name="address">
+            <strong>런치랩공장</strong>
+            <small>김포시 맛있구 이리로 132길 7</small>
+          </label>
+          <div class="btn-group">
+            <button class="btn btn-primary" onclick="layerToggle()" disabled>변경하기</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!--
+      레이어 샘플
+      메뉴 상세보기
+    -->
+    <div class="layer" data-layer="layer-lineup">
+      <div class="blind"></div>
+      <div class="layer-inner">
+        <button class="btn-close" onclick="layerLineupToggle()"><img src="https://icongr.am/material/close.svg?size=24&color=FFFFFF"></button>
+        <div class="form">
+          <h4>라인업 변경</h4>
+          <p class="desc">매일 새로운 메뉴가 제공됩니다.<br/>메뉴 변경을 하지않을 경우 기본값이 될 라인업을 골라주세요.</p>
+          <label class="is-checked" data-lineup="meal">
+            <input type="radio" name="address" checked>
+            <strong>한식</strong>
+            <small>밥과 메인 요리 중심의 든든한 식사</small>
+          </label>
+          <label data-lineup="fresh">
+            <input type="radio" name="address">
+            <strong>프레시박스</strong>
+            <small>샐러드 메뉴를 중심으로한 가벼운 식사</small>
+          </label>
+          <label data-lineup="yogurt">
+            <input type="radio" name="address">
+            <strong>그릭요거트</strong>
+            <small>상큼하게 건강한 간단한 식사</small>
+          </label>
+          <div class="btn-group">
+            <button class="btn btn-primary" onclick="layerLineupToggle()">변경하기</button>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script src="wow.min.js"></script>

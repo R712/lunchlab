@@ -24,6 +24,11 @@ button:hover * {
   transition: ease-in-out all .25s;
 }
 
+a:disabled,
+button:disabled {
+  opacity: .25;
+}
+
 input[type=radio] {
   background: #FFF;
   -webkit-appearance: none;
@@ -637,6 +642,112 @@ li {
   height: 24px;
 }
 
+.page-order .item-ordered {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: rgba(15, 84, 78, 0.03);
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  -webkit-box-shadow: inset 0 0 1px rgba(15, 84, 78, 0.4);
+          box-shadow: inset 0 0 1px rgba(15, 84, 78, 0.4);
+  overflow: hidden;
+}
+
+.page-order .item-ordered .thumb {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.page-order .item-ordered .thumb img {
+  display: block;
+  min-width: 100%;
+  min-height: 150px;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.page-order .item-ordered .thumb[data-kind]::after {
+  content: '가벼운한끼';
+  z-index: 1;
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 4px 8px;
+  background-color: #0F544E;
+  color: #FFF;
+  font-size: 13px;
+  border-radius: 0 0 0 8px;
+}
+
+.page-order .item-ordered .thumb[data-kind=fresh]::after {
+  content: '프레시박스';
+}
+
+.page-order .item-ordered .thumb[data-kind=meal]::after {
+  content: '든든한끼';
+}
+
+.page-order .item-ordered .thumb[data-kind=yogurt]::after {
+  content: '그릭요거트';
+}
+
+.page-order .item-ordered p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 14px 16px;
+}
+
+.page-order .item-ordered strong {
+  margin-bottom: 4px;
+  color: #0F544E;
+  font-size: 20px;
+  line-height: 1.4;
+  word-break: keep-all;
+}
+
+.page-order .item-ordered small {
+  color: rgba(15, 84, 78, 0.5);
+  font-size: 13px;
+  word-break: keep-all;
+}
+
+.page-order .item-ordered a {
+  padding-top: 6px;
+  color: rgba(15, 84, 78, 0.5);
+  font-weight: 500;
+  font-size: 13px;
+}
+
 .page-menu {
   width: 100%;
 }
@@ -1062,7 +1173,7 @@ li {
       -ms-flex-direction: column;
           flex-direction: column;
   margin-top: 20px;
-  padding: 24px 24px 16px;
+  padding: 16px 24px 20px;
   border: 1px solid rgba(15, 84, 78, 0.06);
   background: #FFF;
   border-radius: 8px;
@@ -1071,7 +1182,7 @@ li {
 .page-my .info-card h4 {
   margin-bottom: 10px;
   color: rgba(15, 84, 78, 0.4);
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .page-my .info-card strong {
@@ -1083,7 +1194,7 @@ li {
   margin-bottom: 4px;
   color: rgba(15, 84, 78, 0.4);
   font-weight: 400;
-  font-size: 16px;
+  font-size: 14px;
   text-overflow: ellipsis;
   word-break: keep-all;
 }
@@ -1129,6 +1240,10 @@ li {
 
 .page-my .info-card .info-item[data-kind=payment]::before {
   content: url("https://icongr.am/material/credit-card.svg?size=24&color=0F544E");
+}
+
+.page-my .info-card .info-item[data-kind=fresh]::before {
+  content: url("https://icongr.am/material/leaf.svg?size=24&color=0F544E");
 }
 
 .page-my .info-card footer {
@@ -1192,7 +1307,6 @@ li {
   border: 0;
   -webkit-backdrop-filter: blur(4px);
           backdrop-filter: blur(4px);
-  border-radius: 0 0 0 12px;
   cursor: pointer;
 }
 
@@ -1379,6 +1493,15 @@ li {
 
 .btn {
   outline: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: 0 20px;
   border: 1px solid rgba(15, 84, 78, 0.06);
   height: 48px;
@@ -1444,9 +1567,24 @@ li {
   margin-left: 8px;
 }
 
+.btn-group .btn:only-child {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+
 .btn-group .btn-primary {
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
+}
+
+.btn-group .btn-info {
+  background: #FFF;
+  color: rgba(15, 84, 78, 0.5);
+}
+
+.btn-group .btn-info img {
+  opacity: .4;
+  margin-right: 8px;
 }
 
 .options {
@@ -1715,6 +1853,89 @@ li {
   .layer .layer-inner {
     margin: 28px auto;
   }
+}
+
+.form {
+  padding: 24px;
+  color: #0F544E;
+}
+
+.form h4 {
+  font-size: 20px;
+}
+
+.form .desc {
+  padding: 10px 0 20px;
+  color: rgba(15, 84, 78, 0.5);
+  font-size: 13px;
+}
+
+.form label {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: #FFF;
+  padding: 16px 14px 16px 50px;
+  border-radius: 8px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.form label input {
+  z-index: 1;
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  margin-top: -10px;
+  width: 20px;
+  height: 20px;
+}
+
+.form label input:checked + .thumb {
+  opacity: 1;
+  -webkit-filter: none;
+          filter: none;
+}
+
+.form label p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 14px 16px;
+}
+
+.form label strong {
+  margin-bottom: 4px;
+  color: #0F544E;
+  font-size: 16px;
+  line-height: 1.4;
+  word-break: keep-all;
+}
+
+.form label small {
+  color: rgba(15, 84, 78, 0.5);
+  font-size: 13px;
+  word-break: keep-all;
+}
+
+.form label.is-checked {
+  background: rgba(15, 84, 78, 0.03);
+}
+
+.form label.is-checked strong::after {
+  content: '선택됨';
+  padding-left: 4px;
+  color: #01AB33;
+  font-size: 13px;
 }
 
 @media screen and (max-width: 700px) {
