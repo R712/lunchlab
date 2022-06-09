@@ -880,7 +880,6 @@ li {
             font-size: $f-md;
         }
         small {
-            margin-bottom: 4px;
             color: $c-alpha1;
             font-weight: 400;
             font-size: $f-df;
@@ -1448,8 +1447,33 @@ li {
                 content: '선택됨';
                 padding-left: 4px;
                 color: $c-highlight;
+                font-weight: 400;
                 font-size: $f-sm;
             }
+        }
+        &[data-lineup] {
+            padding-left: 96px;
+            &::after {
+                opacity: .4;
+                content: '';
+                z-index: 1;
+                position: absolute;
+                left: 40px;
+                top: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 56px;
+                height: 100%;
+                background: url('https://icongr.am/material/silverware-fork-knife.svg?size=24&color=0E544E') no-repeat center;
+                border-radius: $radius;
+            }
+        }
+        &[data-lineup=fresh]::after {
+            background-image: url('https://icongr.am/material/leaf.svg?size=24&color=0E544E');
+        }
+        &[data-lineup=yogurt]::after {
+            background-image: url('https://icongr.am/material/food-apple.svg?size=24&color=0E544E');
         }
     }
 }
