@@ -20,33 +20,49 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-@font-face {
+
+ @font-face {
   font-family: 'Spoqa Han Sans Neo';
   font-weight: 700;
-  src: local("Spoqa Han Sans Neo Bold"), url("/font/SpoqaHanSansNeo-Bold.woff2") format("woff2"), url("/font/SpoqaHanSansNeo-Bold.woff") format("woff"), url("/font/SpoqaHanSansNeo-Bold.ttf") format("truetype");
+  src: local('Spoqa Han Sans Neo Bold'),
+  url('/asset/font/SpoqaHanSansNeo-Bold.woff2') format('woff2'),
+  url('/asset/font/SpoqaHanSansNeo-Bold.woff') format('woff'),
+  url('/asset/font/SpoqaHanSansNeo-Bold.ttf') format('truetype');
 }
+
 
 @font-face {
   font-family: 'Spoqa Han Sans Neo';
   font-weight: 500;
-  src: local("Spoqa Han Sans Neo Medium"), url("/font/SpoqaHanSansNeo-Medium.woff2") format("woff2"), url("/font/SpoqaHanSansNeo-Medium.woff") format("woff"), url("/font/SpoqaHanSansNeo-Medium.ttf") format("truetype");
+  src: local('Spoqa Han Sans Neo Medium'),
+  url('/asset/font/SpoqaHanSansNeo-Medium.woff2') format('woff2'),
+  url('/asset/font/SpoqaHanSansNeo-Medium.woff') format('woff'),
+  url('/asset/font/SpoqaHanSansNeo-Medium.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Spoqa Han Sans Neo';
   font-weight: 400;
-  src: local("Spoqa Han Sans Neo Regular"), url("/font/SpoqaHanSansNeo-Regular.woff2") format("woff2"), url("/font/SpoqaHanSansNeo-Regular.woff") format("woff"), url("/font/SpoqaHanSansNeo-Regular.ttf") format("truetype");
+  src: local('Spoqa Han Sans Neo Regular'),
+  url('/asset/font/SpoqaHanSansNeo-Regular.woff2') format('woff2'),
+  url('/asset/font/SpoqaHanSansNeo-Regular.woff') format('woff'),
+  url('/asset/font/SpoqaHanSansNeo-Regular.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Spoqa Han Sans Neo';
   font-weight: 300;
-  src: local("Spoqa Han Sans Neo Light"), url("/font/SpoqaHanSansNeo-Light.woff2") format("woff2"), url("/font/SpoqaHanSansNeo-Light.woff") format("woff"), url("/font/SpoqaHanSansNeo-Light.ttf") format("truetype");
+  src: local('Spoqa Han Sans Neo Light'),
+  url('/asset/font/SpoqaHanSansNeo-Light.woff2') format('woff2'),
+  url('/asset/font/SpoqaHanSansNeo-Light.woff') format('woff'),
+  url('/asset/font/SpoqaHanSansNeo-Light.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Spoqa Han Sans Neo';
   font-weight: 100;
-  src: local("Spoqa Han Sans Neo Thin"), url("/font/SpoqaHanSansNeo-Thin.woff2") format("woff2"), url("/font/SpoqaHanSansNeo-Thin.woff") format("woff"), url("/font/SpoqaHanSansNeo-Thin.ttf") format("truetype");
+  src: local('Spoqa Han Sans Neo Thin'),
+  url('/asset/font/SpoqaHanSansNeo-Thin.woff2') format('woff2'),
+  url('/asset/font/SpoqaHanSansNeo-Thin.woff') format('woff'),
+  url('/asset/font/SpoqaHanSansNeo-Thin.ttf') format('truetype');
 }
-/*# sourceMappingURL=font.css.map */
