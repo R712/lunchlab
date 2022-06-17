@@ -2,7 +2,7 @@
 <html lang="ko">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://r712.github.io/lunchlab">
     <meta property="og:title" content="런치랩 오더 - 점심을 먹는 새로운 습관">
@@ -46,7 +46,7 @@
               <img src="https://icongr.am/material/cog.svg?size=20&color=0F544E">
               <span>마이페이지</span>
             </a>
-            <a href="#">로그아웃</a>
+            <a href="hello.html">로그아웃</a>
           </nav>
           <a href="tel:07088110102" class="link-call">
             <span>070 8811 0102</span>
@@ -114,24 +114,24 @@
       레이어 샘플
       메뉴 상세보기
     -->
-    <div class="layer" data-layer="layer-address">
+    <div class="layer" data-layer="address">
       <div class="blind"></div>
       <div class="layer-inner">
-        <button class="btn-close" onclick="layerToggle()"><img src="https://icongr.am/material/close.svg?size=24&color=FFFFFF"></button>
+        <button class="btn-close" onclick="layerToggle()"><i class="icon icon-close"></i></button>
         <div class="form">
           <h4>배송지 변경</h4>
           <p class="desc">점심을 배송받을 장소를 선택해주세요.</p>
-          <label class="in-single is-checked">
+          <label class="in-radio is-checked">
             <input type="radio" name="address" checked>
             <strong>JY아지트</strong>
             <small>서울 강남구 정연여기로 80길 12, 2F</small>
           </label>
-          <label class="in-single">
+          <label class="in-radio">
             <input type="radio" name="address">
             <strong>런치랩오피스</strong>
             <small>서울 노원구 성수로 12길 5</small>
           </label>
-          <label class="in-single">
+          <label class="in-radio">
             <input type="radio" name="address">
             <strong>런치랩공장</strong>
             <small>김포시 맛있구 이리로 132길 7</small>
@@ -147,24 +147,24 @@
       레이어 샘플
       메뉴 상세보기
     -->
-    <div class="layer" data-layer="layer-lineup">
+    <div class="layer" data-layer="lineup">
       <div class="blind"></div>
       <div class="layer-inner">
-        <button class="btn-close" onclick="layerLineupToggle()"><img src="https://icongr.am/material/close.svg?size=24&color=FFFFFF"></button>
+        <button class="btn-close" onclick="layerLineupToggle()"><i class="icon icon-close"></i></button>
         <div class="form">
           <h4>라인업 변경</h4>
           <p class="desc">매일 새로운 메뉴가 제공됩니다.<br/>메뉴 변경을 하지않을 경우 기본값이 될 라인업을 골라주세요.</p>
-          <label class="is-checked" data-lineup="meal">
+          <label class="in-radio is-checked" data-lineup="meal">
             <input type="radio" name="address" checked>
             <strong>한식</strong>
             <small>밥과 메인 요리 중심의 든든한 식사</small>
           </label>
-          <label data-lineup="fresh">
+          <label class="in-radio" data-lineup="fresh">
             <input type="radio" name="address">
             <strong>프레시박스</strong>
             <small>샐러드 메뉴를 중심으로한 가벼운 식사</small>
           </label>
-          <label data-lineup="yogurt">
+          <label class="in-radio" data-lineup="yogurt">
             <input type="radio" name="address">
             <strong>그릭요거트</strong>
             <small>상큼하게 건강한 간단한 식사</small>

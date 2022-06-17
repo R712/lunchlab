@@ -31,7 +31,11 @@ layerToggle = () => {
     pageBody.classList.toggle('scrollx');
 }
 layerLineupToggle = () => {
-    document.querySelector('.layer[data-layer=layer-lineup').classList.toggle('fade');
+    document.querySelector('.layer[data-layer=lineup').classList.toggle('fade');
+    pageBody.classList.toggle('scrollx');
+}
+layerSignup = () => {
+    document.querySelector('.layer[data-layer=signup').classList.toggle('fade');
     pageBody.classList.toggle('scrollx');
 }
 

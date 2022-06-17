@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://r712.github.io/lunchlab">
+    <meta property="og:title" content="런치랩 오더 - 점심을 먹는 새로운 습관">
+    <meta property="og:image" content="img/og-image.png">
+    <meta property="og:description" content="점심을 먹는 새로운 습관, 런치랩 입니다.">
+    <meta property="og:site_name" content="런치랩 오더">
+    <meta property="og:locale" content="ko_KR">
+    <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
+    <link rel="icon" href="./favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/ll-order.css">
+    <title> Lunchlab </title>
+  </head>
+  <body>
+    <div class="hello wow fadeIn">
+      <div class="inner">
+        <h1 class="wow fadeInUp fast" data-wow-delay="0.4s">lunchlab</h1>
+        <h2>
+          <span class="wow fadeInUp fast" data-wow-delay="0.4s">점심을 먹는</span>
+          <span class="wow fadeInUp fast" data-wow-delay="0.4s">새로운 습관</span>
+          <strong class="wow fadeInUp fast" data-wow-delay="1s">런치랩</strong>
+        </h2>
+        <button class="btn btn-kakao wow fadeInUp slow" onclick="layerSignup()">카카오로 시작하기</button>
+      </div>
+    </div>
+    <footer class="app-footer wow fadeIn">
+      <div class="copyright">
+        <img src="img/lunchlab-dish.svg" class="brand">
+        <nav>
+          <strong>(주)런치랩</strong>
+          <a href="#">서비스이용약관</a>
+          <a href="#">개인정보처리방침</a>
+        </nav>
+        <p>
+          <span>대표: 김성수</span>
+          <span>개인정보관리책임자: 김성수</span>
+          <span>서울특별시 노원구 동일로 174길 27 서울창업디딤터 307호</span>
+          <span>사업자등록번호: 633-88-01020</span>
+          <span>영업신고번호: 제 2019-0106058</span>
+          <span>통신판매업 신고번호: 2019-서울강남-03806
+          <span>전화: 070-8811-0102</span>
+          <span>Fax: 050-4152-5787</span>
+          <span>Email: sskim@lunchlab.me</span>
+        </p>
+      </div>
+      <h6>&copy; 2022 <strong>lunchlab</strong> all rights reserved</h6>
+    </footer>
+
+    <!--
+      가입하기 레이어
+    -->
+    <div class="layer" data-layer="signup">
+      <div class="blind"></div>
+      <div class="layer-inner">
+        <button class="btn-close" onclick="layerSignup()"><i class="icon icon-close"></i></button>
+        <div class="form">
+          <form action="index.html">
+            <h3>런치랩 가입하기</h3>
+            <label class="in-input is-valid">
+              <div class="in-label">회사 코드</div>
+              <input type="text" name="companycode" placeholder="초대받은 브라우저에서" value="JYSS4" disabled />
+            </label>
+            <label class="in-input">
+              <div class="in-label">수령시 이름</div>
+              <input type="text" name="companycode" placeholder="예) 김런치" />
+            </label>
+            <label class="in-input has-btn">
+              <div class="in-label">휴대폰 번호</div>
+              <div class="in-group">
+                <input type="tel" name="phonenumber" placeholder="예) 010-1234-5677" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" maxlength="11" />
+                <button class="btn" type="button">인증</button>
+              </div>
+            </label>
+            <label class="in-input is-invalid">
+              <div class="in-label">인증번호 확인</div>
+              <input type="text" name="requiredcode" placeholder="메시지로 온 인증코드를 입력해주세요." />
+            </label>
+            <label class="in-checkbox">
+              <input type="checkbox" name="agreeserviceterms" />
+              <a href="#">이용약관</a>에 동의합니다.
+            </label>
+            <label class="in-checkbox">
+              <input type="checkbox" name="agreeprivacyterms" />
+              <a href="#">개인정보취급방침</a>에 동의합니다.
+            </label>
+            <div class="btn-group">
+              <button class="btn btn-cta" type="submit">회원가입</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="wow.min.js"></script>
+    <script src="js/order.js"></script>
+  </body>
+</html>
